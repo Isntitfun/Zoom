@@ -1,0 +1,38 @@
+html(lang="en")
+    head
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css@1.12/mvp.css")
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Zoome
+    body
+        main 
+            h1 Zoome 
+            div
+                h3 Chat 
+
+                form#nicknameForm
+                    h3 What is your name?
+                    input#nicknameInput(type="text" placeholder="set your nickname." value="Anon")
+                    input(type="submit")
+
+                form#roomForm
+                    h3
+                    input#roomInput(type="text" placeholder="Enter or create a room.")
+                    input(type="submit")
+                    h5 Currently opened rooms
+                    section#roomDisplay(style="background-color:#F8EDE3; height:50px;")
+
+
+                form#messageForm
+                    h3#currentRoom 
+                    Section#messageDisplay(style="background-color:#F8EDE3; height:50px;")
+                    input#messageInput(type="text" placeholder="Enter a message here" required)
+                    input(type="submit")
+
+                div#control
+                    a#changeNickname Change Nickname &rarr;
+                    br
+                    a#exitRoom Exit room &rarr;
+    script(src="/socket.io/socket.io.js")
+    script(src="static/js/chat.js") 
